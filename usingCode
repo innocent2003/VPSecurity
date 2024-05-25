@@ -1,0 +1,7 @@
+cd terraform
+terraform init
+terraform apply
+scp -i your-key.pem -r ../flask_app ubuntu@<instance_public_ip>:/home/ubuntu/
+ssh -i your-key.pem ubuntu@<instance_public_ip>
+cd /home/ubuntu/flask_app
+nohup python3 app.py &
